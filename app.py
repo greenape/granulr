@@ -42,6 +42,7 @@ def webhook():
             event_type = request.headers['X-GitHub-Event']
             print("Got event type {}".format(event_type))
             forward(fwds.get(event_type), request.json)
+            forward(fwds.get("*"), request.json)
         else:
             print("Ignoring b/c {} is a bot.".format(request.json['sender']['login']))
         return '', 200
