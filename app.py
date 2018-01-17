@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 bots = {x for x in os.environ.get("BOTS", "").split(" ") if x != ''}
 event_types = {x for x in os.environ.get("EVENT_TYPES", "").split(" ") if x != ''}
-forwards = {x for x in os.environ.get("EVENT_TYPES", "").split(" ") if x != ''}
+forwards = {x for x in os.environ.get("FORWARDS", "").split(" ") if x != ''}
 fwds = dict(zip(event_types, forwards))
 
 print("Ignoring {} as bots.".format(bots))
